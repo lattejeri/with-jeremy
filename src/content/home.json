@@ -1,0 +1,102 @@
+{
+  "seo": {
+    "title": "With Jeremy — Websites & better leads for northside Brisbane businesses",
+    "description": "Local web and digital help for tradies, salons and small businesses in Brendale, Albany Creek and Brisbane's northside. Senior-level work at a flat, fair price."
+  },
+  "hero": {
+    "words": ["Websites", "Better leads", "Bookings", "A new logo", "Google reviews"],
+    "sub": "Local web and digital help for tradies, salons and small businesses in Brendale, Albany Creek and the northside.",
+    "primaryCta": "Start a project",
+    "secondaryCta": "See my work",
+    "trust": ["Senior-level work", "Flat price", "No meetings in your workday"]
+  },
+  "about": {
+    "eyebrow": "G'day, I'm Jeremy",
+    "heading": "Building for Brisbane since the iPhone landed in 2008.",
+    "body": "I've spent my career making apps and websites for boutique agencies and big enterprise. Now I want to put that experience to work for the businesses around me — so local tradies, dog groomers and dentists get a web presence fit for 2026 and, most importantly, better leads.",
+    "photo": ""
+  },
+  "audience": {
+    "heading": "Made for local businesses",
+    "trades": ["Tradies", "Dog groomers", "Salons", "Dentists", "Cafés", "Physios"],
+    "suburbsLabel": "Based in Brendale, working with businesses across",
+    "suburbs": ["Brendale", "Albany Creek", "Strathpine", "Bray Park", "Eatons Hill", "Warner", "Cashmere", "Arana Hills", "Everton Hills", "Aspley", "Lawnton", "Petrie"]
+  },
+  "deal": {
+    "eyebrow": "The deal",
+    "heading": "Senior-level work at a fair, flat price.",
+    "pillars": [
+      {
+        "title": "Just me, start to finish.",
+        "body": "You deal directly with an experienced developer and designer. No account managers, no junior handoffs, no $8k retainers padding the invoice."
+      },
+      {
+        "title": "Built while you work.",
+        "body": "Recorded video walkthroughs and batched feedback, so there's no phone tag during your busy day — and I get focused, uninterrupted time on your build."
+      },
+      {
+        "title": "Fast, lean and yours.",
+        "body": "Clean, lightweight sites instead of bloated page builders. You own everything, and video guides mean simple edits never need a developer."
+      }
+    ],
+    "tradeTitle": "The trade",
+    "trade": "I won't pick up the phone at 10am. In return, you get better design and sharper technical work at a fair, predictable price."
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "heading": "From first chat to more leads.",
+    "steps": [
+      { "title": "Understand your business", "body": "Who your customers are, what a great job looks like, and what a good lead is worth to you." },
+      { "title": "Review what you've got", "body": "Your current site, Google Business Profile, socials and reviews — what's working and what's costing you." },
+      { "title": "Find your edge", "body": "Together we pin down why people should choose you over the business down the road." },
+      { "title": "Put it to work", "body": "Your edge on the web, with the tools you need to grow: lead forms, bookings or online sales." },
+      { "title": "Hand it over", "body": "Video walkthroughs and full ownership. It's yours — no hostage fees." }
+    ]
+  },
+  "work": {
+    "eyebrow": "My work",
+    "heading": "Recent projects",
+    "nextTitle": "Your business here?",
+    "nextBody": "Want to be next? Founding client spots are open.",
+    "nextCta": "Let's talk"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "heading": "What I can help with",
+    "items": [
+      { "title": "Branding & logos", "body": "A clear, memorable identity that looks right on a ute, a shopfront and a phone screen." },
+      { "title": "Website design & build", "body": "Fast, modern sites built on WordPress blocks or static architecture, designed to turn visitors into enquiries." },
+      { "title": "Google Business Profile & local search", "body": "Get found on the map when locals search for what you do nearby." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "heading": "Flat price. No surprises.",
+    "badge": "Founding client rate",
+    "price": "$2,500",
+    "priceNote": "websites from, flat",
+    "body": "I'm taking on a small number of founding clients at this rate while I build up my local portfolio. You get a fixed quote before anything starts.",
+    "spots": "3 spots available"
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "heading": "Good questions",
+    "items": [
+      { "q": "Can I call you?", "a": "We'll have a proper kickoff chat to start. After that, work runs on short video walkthroughs and written feedback you can reply to whenever suits — no juggling calls between jobs." },
+      { "q": "Do I own the website?", "a": "Yes. The domain, the hosting account and the site itself are in your name." },
+      { "q": "Can I edit it myself?", "a": "Yes. You'll get video guides for the everyday edits, like changing prices, photos or opening hours." },
+      { "q": "How long does it take?", "a": "Most small business sites take two to four weeks, depending on how quickly content and feedback come through." },
+      { "q": "WordPress or something else?", "a": "Whatever suits you best. WordPress (native blocks, no heavy page builders) if you want to edit a lot, or a fast static site if you don't." }
+    ]
+  },
+  "contact": {
+    "heading": "Tell me about your business.",
+    "body": "A few quick details and I'll come back to you with a plan and a flat price.",
+    "cta": "Get in touch",
+    "email": ""
+  },
+  "footer": {
+    "area": "Brendale, Albany Creek & Brisbane's northside",
+    "abn": ""
+  }
+}

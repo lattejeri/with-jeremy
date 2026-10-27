@@ -1,0 +1,92 @@
+---
+import home from '../content/home.json';
+const { pricing } = home;
+---
+
+<section id="pricing" class="section">
+  <div class="wrap">
+    <p class="eyebrow">{pricing.eyebrow}</p>
+    <h2>{pricing.heading}</h2>
+
+    <div class="card offer">
+      <span class="badge">{pricing.badge}</span>
+      <p class="price">
+        {pricing.price}
+        <small>{pricing.priceNote}</small>
+      </p>
+      <p class="body">{pricing.body}</p>
+      <div class="foot">
+        <span class="spots">{pricing.spots}</span>
+        <a href="#contact" class="btn btn-primary">Claim a spot →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .offer {
+    max-width: 640px;
+    padding: clamp(28px, 4vw, 44px);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .price {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 20px 0 16px;
+  }
+
+  .price small {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  .body {
+    color: var(--muted);
+  }
+
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .spots {
+    font-weight: 600;
+  }
+
+  .spots::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sun);
+    border: 1.5px solid var(--ink);
+    margin-right: 10px;
+  }
+</style>

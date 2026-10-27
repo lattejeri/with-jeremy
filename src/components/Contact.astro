@@ -1,0 +1,71 @@
+---
+import home from '../content/home.json';
+const { contact, footer } = home;
+const year = new Date().getFullYear();
+---
+
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="panel">
+      <h2>{contact.heading}</h2>
+      <p class="lede">{contact.body}</p>
+      <!-- TODO: replace with the enquiry form -->
+      <a href={contact.email ? `mailto:${contact.email}` : '#contact'} class="btn cta">{contact.cta} →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap footer">
+  <span><span class="script">Websites</span> <strong>with Jeremy</strong></span>
+  <span>{footer.area}</span>
+  <span>{footer.abn && `ABN ${footer.abn} · `}© {year}</span>
+</footer>
+
+<style>
+  .panel {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: calc(var(--radius) + 8px);
+    padding: clamp(36px, 7vw, 80px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel::after {
+    content: '';
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    right: -80px;
+    bottom: -80px;
+    border-radius: 50%;
+    border: 2px solid var(--sun);
+    opacity: 0.5;
+  }
+
+  .panel .lede {
+    color: rgba(250, 248, 244, 0.7);
+    margin: 20px 0 36px;
+  }
+
+  .cta {
+    background: var(--sun);
+    border-color: var(--sun);
+    color: var(--ink);
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 40px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .footer .script {
+    font-size: 1.4rem;
+    color: var(--blue);
+  }
+</style>

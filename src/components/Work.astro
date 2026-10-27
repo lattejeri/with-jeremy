@@ -1,0 +1,162 @@
+---
+import home from '../content/home.json';
+import { withBase } from '../lib/url';
+const { work } = home;
+
+interface Project {
+  title: string;
+  summary?: string;
+  url?: string;
+  thumbnail?: string;
+  order?: number;
+}
+
+const projects = Object.values(
+  import.meta.glob<{ frontmatter: Project }>('../content/work/*.md', { eager: true }),
+)
+  .map((file) => file.frontmatter)
+  .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+---
+
+<section id="work" class="section">
+  <div class="wrap">
+    <p class="eyebrow">{work.eyebrow}</p>
+    <h2>{work.heading}</h2>
+
+    <div class="grid">
+      {
+        projects.map((project) => (
+          <a class="project" href={project.url} target="_blank" rel="noopener">
+            <div class="thumb">
+              {project.thumbnail ? (
+                <img src={withBase(project.thumbnail)} alt="" loading="lazy" />
+              ) : (
+                <span>{project.title}</span>
+              )}
+            </div>
+            <h3>{project.title}</h3>
+            {project.summary && <p>{project.summary}</p>}
+          </a>
+        ))
+      }
+
+      <a class="next" href="#contact">
+        <svg class="ants" aria-hidden="true">
+          <rect width="100%" height="100%" rx="20" ry="20" />
+        </svg>
+        <span class="plus">+</span>
+        <h3>{work.nextTitle}</h3>
+        <p>{work.nextBody}</p>
+        <span class="btn btn-ghost">{work.nextCta} →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-bottom: 48px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .project,
+  .next {
+    text-decoration: none;
+    border-radius: var(--radius);
+  }
+
+  .project h3 {
+    margin: 18px 0 4px;
+  }
+
+  .project p {
+    color: var(--muted);
+  }
+
+  .thumb {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--blue-soft);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    transition: transform 0.25s ease;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project:hover .thumb {
+    transform: translateY(-4px);
+  }
+
+  /* Empty state: marching-ants outline */
+  .next {
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px;
+    gap: 8px;
+  }
+
+  .ants {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .ants rect {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.5;
+    stroke-dasharray: 8 7;
+    animation: march 0.9s linear infinite;
+  }
+
+  .next:hover .ants rect {
+    stroke: var(--blue);
+  }
+
+  @keyframes march {
+    to {
+      stroke-dashoffset: -15;
+    }
+  }
+
+  .plus {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--sun);
+    display: grid;
+    place-items: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .next p {
+    color: var(--muted);
+    max-width: 28ch;
+    margin-bottom: 12px;
+  }
+</style>

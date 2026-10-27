@@ -1,0 +1,82 @@
+---
+import home from '../content/home.json';
+const { deal } = home;
+---
+
+<section id="deal" class="section">
+  <div class="wrap">
+    <p class="eyebrow">{deal.eyebrow}</p>
+    <h2>{deal.heading}</h2>
+
+    <div class="pillars">
+      {
+        deal.pillars.map((pillar, i) => (
+          <article class="card">
+            <span class="num">0{i + 1}</span>
+            <h3>{pillar.title}</h3>
+            <p>{pillar.body}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <aside class="trade">
+      <span class="script">{deal.tradeTitle}</span>
+      <p>{deal.trade}</p>
+    </aside>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-bottom: 48px;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .card h3 {
+    margin: 16px 0 10px;
+  }
+
+  .card p {
+    color: var(--muted);
+  }
+
+  .num {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--blue);
+  }
+
+  .trade {
+    margin-top: 16px;
+    border-radius: var(--radius);
+    padding: 28px;
+    background: var(--sun);
+    display: grid;
+    gap: 4px;
+  }
+
+  @media (min-width: 720px) {
+    .trade {
+      grid-template-columns: 180px 1fr;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  .trade .script {
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+
+  .trade p {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+</style>

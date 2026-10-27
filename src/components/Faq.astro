@@ -1,0 +1,71 @@
+---
+import home from '../content/home.json';
+const { faq } = home;
+---
+
+<section id="faq" class="section">
+  <div class="wrap">
+    <p class="eyebrow">{faq.eyebrow}</p>
+    <h2>{faq.heading}</h2>
+
+    <div class="list">
+      {
+        faq.items.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .list {
+    max-width: 760px;
+    border-top: 1px solid var(--line);
+  }
+
+  details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 22px 40px 22px 0;
+    font-weight: 600;
+    font-size: 1.15rem;
+    position: relative;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  details p {
+    color: var(--muted);
+    padding-bottom: 24px;
+    max-width: 62ch;
+  }
+</style>

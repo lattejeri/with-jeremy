@@ -1,0 +1,83 @@
+---
+import home from '../content/home.json';
+const { process } = home;
+---
+
+<section id="process" class="section">
+  <div class="wrap">
+    <p class="eyebrow">{process.eyebrow}</p>
+    <h2>{process.heading}</h2>
+
+    <ol class="steps">
+      {
+        process.steps.map((step, i) => (
+          <li>
+            <span class="dot">{i + 1}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-bottom: 48px;
+  }
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0;
+    max-width: 760px;
+  }
+
+  .steps li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding-bottom: 32px;
+    position: relative;
+  }
+
+  /* Dashed connector between steps */
+  .steps li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    bottom: 0;
+    border-left: 1.5px dashed var(--line);
+  }
+
+  .dot {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--ink);
+    background: var(--card);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+  }
+
+  .steps li:last-child .dot {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+
+  h3 {
+    margin: 10px 0 6px;
+  }
+
+  p {
+    color: var(--muted);
+  }
+</style>

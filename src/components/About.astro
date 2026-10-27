@@ -1,0 +1,56 @@
+---
+import home from '../content/home.json';
+import { withBase } from '../lib/url';
+const { about } = home;
+---
+
+<section id="about" class="section">
+  <div class="wrap grid">
+    <div class="photo">
+      {about.photo ? <img src={withBase(about.photo)} alt="Jeremy" loading="lazy" /> : <span>Photo of Jeremy</span>}
+    </div>
+    <div>
+      <p class="eyebrow">{about.eyebrow}</p>
+      <h2>{about.heading}</h2>
+      <p class="lede">{about.body}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .grid {
+      grid-template-columns: 5fr 7fr;
+      gap: 72px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 24px;
+  }
+
+  .photo {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius);
+    background: var(--sun-soft);
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    overflow: hidden;
+    max-width: 420px;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

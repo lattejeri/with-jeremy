@@ -1,0 +1,145 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: home
+    label: Home page
+    type: file
+    path: src/content/home.json
+    format: json
+    fields:
+      - name: seo
+        label: SEO
+        type: object
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: description, label: Meta description, type: text }
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: words, label: Rotating words (before "with Jeremy"), type: string, list: true }
+          - { name: sub, label: Subheading, type: text }
+          - { name: primaryCta, label: Main button, type: string }
+          - { name: secondaryCta, label: Second button, type: string }
+          - { name: trust, label: Trust points, type: string, list: true }
+      - name: about
+        label: About
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: body, label: Body, type: text }
+          - { name: photo, label: Photo, type: image }
+      - name: audience
+        label: Who it's for
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: trades, label: Business types, type: string, list: true }
+          - { name: suburbsLabel, label: Suburbs label, type: string }
+          - { name: suburbs, label: Suburbs, type: string, list: true }
+      - name: deal
+        label: The deal
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: pillars
+            label: Pillars
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: body, label: Body, type: text }
+          - { name: tradeTitle, label: Trade title, type: string }
+          - { name: trade, label: Trade text, type: text }
+      - name: process
+        label: Process
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: steps
+            label: Steps
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: body, label: Body, type: text }
+      - name: work
+        label: My work
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: nextTitle, label: Empty slot title, type: string }
+          - { name: nextBody, label: Empty slot text, type: string }
+          - { name: nextCta, label: Empty slot button, type: string }
+      - name: services
+        label: Services
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: items
+            label: Services
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: body, label: Body, type: text }
+      - name: pricing
+        label: Pricing
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: badge, label: Badge, type: string }
+          - { name: price, label: Price, type: string }
+          - { name: priceNote, label: Price note, type: string }
+          - { name: body, label: Body, type: text }
+          - { name: spots, label: Spots left, type: string }
+      - name: faq
+        label: Questions
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: items
+            label: Questions
+            type: object
+            list: true
+            fields:
+              - { name: q, label: Question, type: string }
+              - { name: a, label: Answer, type: text }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: body, label: Body, type: text }
+          - { name: cta, label: Button, type: string }
+          - { name: email, label: Email address, type: string }
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - { name: area, label: Service area, type: string }
+          - { name: abn, label: ABN, type: string }
+
+  - name: work
+    label: Case studies
+    type: collection
+    path: src/content/work
+    format: yaml-frontmatter
+    view:
+      fields: [title, order]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: summary, label: Summary, type: string }
+      - { name: url, label: Live site URL, type: string }
+      - { name: thumbnail, label: Thumbnail, type: image }
+      - { name: order, label: Order, type: number }
+      - { name: body, label: Case study, type: rich-text }
